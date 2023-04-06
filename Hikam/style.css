@@ -1,0 +1,160 @@
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+::-moz-selection {
+  color: #ffffff;
+  background-color #cc6827;
+}
+
+::selection {
+  color: #ffffff;
+  background-color: #cc6827;
+}
+
+@font-face {
+  font-family: "Hudhud AR";
+  src: url("subset-HudhudAR-Heavy.woff2") format("woff2"),
+    url("subset-HudhudAR-Heavy.woff") format("woff");
+  font-weight: 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+body #magicPointer {
+  height: 5px;
+  width: 5px;
+  top: 0;
+  left: 0;
+  position: fixed;
+  background: #fff;
+  border-radius: 50%;
+  pointer-events: none;
+  transition: background 0.2s, width 0.2s, height 0.2s, box-shadow 0.2s;
+  z-index: 1;
+}
+
+.container {
+  margin: 0;
+  padding: 0;
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: stretch;
+  height: 100vh;
+  font-size: 0; /* remove the white space between inline-block elements */
+}
+
+.left-section {
+  font-size: 1rem;
+  background-color: #060107;
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  box-sizing: border-box;
+  width: calc(54% - 389px);
+  position: relative;
+  z-index: 1;
+  min-height: 100vh;
+
+}
+
+.left-content {
+  padding: 20px;
+  display: block;
+  margin-top: -435px; /* add margin to the top of the left content */
+  text-align: center; /* center all content inside left-content div */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+}
+
+.logo-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.logo-container img {
+  display: block;
+  margin: 125px auto;
+}
+
+.entrance-title {
+  position: relative;
+  text-align: center;
+  font-family: "Hudhud AR";
+  margin-top: 50px;
+  color: #f988e7;
+}
+
+.quote-text {
+  position: absolute;
+  top: 42%;
+  left: 50%;
+  transform: translateX(-50%);
+  text-align: center;
+  color: white;
+  font-family: "Hudhud AR";
+  font-size: 77px;
+  line-height: 105px;
+  margin-bottom: 50px;
+  cursor: pointer;
+}
+
+.next-quote {
+  position: absolute;
+  background-color: #261523;
+  padding: 10px 20px;
+  border-radius: 5px;
+  border: none;
+  font-family: "Hudhud AR";
+  font-size: 25px;
+  cursor: pointer;
+  color: white;
+  top: 80%; /* position the button at the vertical center of the left section */
+  left: 50%; /* position the button at the horizontal center of the left section */
+  transform: translate(
+    -50%,
+    -50%
+  ); /* adjust the position to center the button */
+  margin-top: 20px;
+  background-image: linear-gradient(90deg, #9f56cb 0%, #f988e7 100%);
+  background-size: 200% auto;
+  animation: gradient 5s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.right-section {
+  flex-grow: 1;
+  overflow: hidden;
+  position: relative;
+}
+
+.right-section img {
+  position: absolute;
+  top: 0;
+  right: 0;
+  height: 100%;
+}
